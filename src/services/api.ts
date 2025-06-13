@@ -31,8 +31,8 @@ export async function sendMessageToGemini(
       .join('\n');
     
     const contextPrompt = chatHistory.length ? 
-      `Here's our conversation so far:\n${historyFormatted}\n\nNow respond to this message as an Indian tapori friend: ${userMessage}` :
-      `Respond like an Indian tapori friend to: ${userMessage}`;
+      `Here's our conversation so far:\n${historyFormatted}\n\nNow respond to this message as an Indian bakchod friend: ${userMessage}` :
+      `Respond like an Indian gali dena wala bakchod friend to: ${userMessage}`;
       
     const response = await fetch(
       `${API_URL}?key=${API_KEY}`,
@@ -59,7 +59,7 @@ export async function sendMessageToGemini(
     }
 
     const rawReply = data.candidates?.[0]?.content?.parts?.[0]?.text || 
-      "Arre kuch gadbad ho gayi bhai!";
+      "Arre gand fat ho gayi bhai!";
     
     // Add extra tapori style to the response
     const enhancedReply = addTaporiStyle(rawReply);
@@ -75,7 +75,7 @@ export async function sendMessageToGemini(
     return {
       id: nanoid(),
       sender: "bot",
-      text: "Network mein kaand ho gaya re bhai! Thoda time baad try kar!",
+      text: "Network ki amma chud gyi! Thoda time baad try kar!",
       timestamp: new Date().toLocaleTimeString(),
     };
   }

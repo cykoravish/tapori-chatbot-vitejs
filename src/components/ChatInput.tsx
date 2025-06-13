@@ -90,9 +90,7 @@ export default function ChatInput({
         </motion.button>
       </div>
       <div className="text-xs text-center mt-1 opacity-70">
-        {isDarkMode
-          ? "⇧ + Enter = New Line | Enter = Send"
-          : "⇧ + Enter = New Line | Enter = Send"}
+        {isDarkMode ? "made with ❤️ by Ravish" : "made with ❤️ by Ravish"}
       </div>
     </div>
   );
